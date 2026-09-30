@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050a12">
+  <title>爆益銘柄 公式LINE</title>
+  <meta name="description" content="投資情報を公式LINEで配信中。">
+  <style>
+    :root{--bg:#050a12;--bg2:#07131a;--panel:#0c111b;--panel2:#101522;--line:#1b2434;--text:#f6f7f9;--muted:#8d95a6;--green:#18ff68;--green2:#08c95b;--yellow:#ffd329;--cyan:#16f0c4;--pink:#ff4a9d;--blue:#35a5ff;--danger:#ffb02e}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#102125 0%,var(--bg) 34%,#05080e 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.6;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+    .ticker{height:34px;display:flex;align-items:center;overflow:hidden;white-space:nowrap;background:#02060a;border-bottom:1px solid #111721;font-size:11px;font-weight:700;position:sticky;top:0;z-index:30}.ticker-track{display:flex;gap:34px;min-width:max-content;animation:ticker 26s linear infinite}.ticker:hover .ticker-track{animation-play-state:paused}.ticker span{color:#f45}.ticker .up{color:#2ef08a}.ticker .down{color:#ff5967}.ticker .flat{color:#999}.ticker-label{padding:0 12px;border-right:1px solid #17202c;color:#7f8998;font-size:10px;flex:0 0 auto;background:#02060a;z-index:2}@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-45%)}}
+    .hero{position:relative;padding:62px 0 50px;text-align:center;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 0 32%,rgba(36,255,160,.05) 33%,transparent 38% 63%,rgba(36,255,160,.04) 64%,transparent 68%);pointer-events:none}.hero:after{content:"";position:absolute;width:550px;height:550px;left:50%;top:20%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(24,255,104,.08),transparent 65%);pointer-events:none;animation:glow 4s ease-in-out infinite}@keyframes glow{50%{opacity:.35;transform:translate(-50%,-50%) scale(1.08)}}
+    .eyebrow{display:inline-block;padding:7px 18px;border-radius:999px;background:rgba(255,171,39,.12);border:1px solid rgba(255,186,70,.22);color:#ffbd4a;font-weight:800;font-size:11px;margin-bottom:18px;animation:pulse 2.3s ease-in-out infinite}@keyframes pulse{50%{box-shadow:0 0 18px rgba(255,189,74,.12)}}
+    h1{font-size:clamp(36px,7vw,66px);line-height:1.05;margin:0;font-weight:900;letter-spacing:-.05em;position:relative;z-index:1}h1 .gold{color:var(--yellow)}h1 .green{color:var(--green)}.lead{max-width:660px;margin:20px auto 0;color:#d4d8df;font-size:14px;position:relative;z-index:1}
+    .update{margin:12px auto 0;color:#778193;font-size:10px;position:relative;z-index:1}.update strong{color:#b7c0cc;font-weight:800}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;max-width:700px;margin:34px auto 28px}.stat{transition:transform .2s}.stat:hover{transform:translateY(-3px)}.stat strong{display:block;font-size:24px;line-height:1.1}.stat small{display:block;margin-top:4px;color:#8e95a3;font-size:10px}.stat:nth-child(1) strong{color:#ffd41b}.stat:nth-child(2) strong{color:#16ff7a}.stat:nth-child(3) strong{color:#ff5baf}.stat:nth-child(4) strong{color:#fff}
+    .cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:310px;padding:17px 26px;border-radius:12px;background:linear-gradient(180deg,#11ed61,#06b951);box-shadow:0 0 18px rgba(0,255,100,.45),inset 0 1px 0 rgba(255,255,255,.16);font-weight:900;color:#02110a;font-size:15px;transition:.18s transform,.18s box-shadow;position:relative;overflow:hidden}.cta:hover{transform:translateY(-2px);box-shadow:0 0 28px rgba(0,255,100,.6)}.cta:active{transform:translateY(0)}.cta .bubble{width:24px;height:24px;border-radius:8px;background:white;display:grid;place-items:center;font-size:14px}.cta:after{content:"";position:absolute;top:0;left:-120%;width:80%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);animation:shine 3.4s infinite}@keyframes shine{0%,45%{left:-120%}68%{left:140%}100%{left:140%}}
+    .fine{color:#727988;font-size:9px;margin-top:7px}
+    .section{padding:42px 0}.section h2{text-align:center;font-size:25px;margin:0 0 24px;letter-spacing:-.03em}.section h2 .g{color:var(--green)}.section h2 .y{color:var(--yellow)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:linear-gradient(180deg,rgba(17,23,36,.98),rgba(9,14,24,.98));border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:19px;min-height:128px;box-shadow:0 10px 24px rgba(0,0,0,.12);cursor:pointer;transition:transform .22s,border-color .22s,box-shadow .22s}.card:hover{transform:translateY(-4px);border-color:rgba(24,255,104,.23);box-shadow:0 16px 36px rgba(0,0,0,.22)}.card .ico{font-size:15px;color:#fff;opacity:.8}.card h3{font-size:14px;margin:8px 0 6px}.card p{font-size:10px;color:#9098a8;margin:0}.card h3 .gold{color:var(--yellow)}.card h3 .green{color:var(--green)}.card h3 .pink{color:#ff62ad}.card h3 .blue{color:#57b5ff}.card .more{display:block;color:#5d6a7f;font-size:9px;margin-top:10px}
+    .results{padding:50px 0 45px}.result-title{text-align:center;margin-bottom:23px}.result-title .sub{color:var(--green);font-weight:800;font-size:11px}.result-title h2{font-size:24px;margin:3px 0 0}.notice{max-width:760px;margin:0 auto 18px;padding:10px 13px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025);border-radius:10px;color:#8f98a7;font-size:10px;text-align:center}
+    .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.review{padding:17px;border-radius:12px;background:#111722;border:1px solid rgba(255,255,255,.06);transition:transform .2s}.review:hover{transform:translateY(-3px)}.person{display:flex;align-items:center;gap:10px}.avatar{width:42px;height:42px;border-radius:50%;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#151c2a;display:grid;place-items:center}.person b{font-size:12px}.person span{display:block;font-size:9px;color:#8b93a2}.stars{font-size:11px;color:#ffd21e;letter-spacing:2px;margin:9px 0 3px}.review p{margin:0;color:#c7ccd5;font-size:10px}.tag{display:inline-block;margin-top:10px;padding:3px 7px;border-radius:999px;background:rgba(24,255,104,.06);border:1px solid rgba(24,255,104,.1);color:#6bda97;font-size:8px}
+    .profile-svg{width:100%;height:100%}
+    .bottom{padding:48px 0 52px;background:linear-gradient(180deg,#10151a,#09131a);border-top:1px solid #111a22;border-bottom:1px solid #111a22;text-align:center}.warning{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,162,39,.1);border:1px solid rgba(255,162,39,.22);color:#ffb02e;font-size:10px;font-weight:800}.bottom h2{font-size:26px;line-height:1.25;margin:11px 0}.bottom h2 .gold{color:var(--yellow)}.bottom p{max-width:580px;margin:0 auto 20px;color:#9ca4b1;font-size:11px}
+    footer{padding:26px 0 36px;text-align:center;color:#667080;font-size:9px}.footer-title{color:#22ea86;font-weight:900;font-size:13px;margin-bottom:8px}
+    .float{position:fixed;left:50%;transform:translateX(-50%);bottom:15px;z-index:20;display:none}.float .cta{min-width:min(92vw,420px);padding:13px 18px;font-size:14px}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}.modal.open{display:flex}.modal-box{max-width:520px;width:100%;background:#0b1019;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px;box-shadow:0 30px 90px rgba(0,0,0,.5)}.modal-head{display:flex;justify-content:space-between;gap:10px;align-items:center}.modal-head h3{margin:0;font-size:16px}.close{border:0;background:#151c29;color:#d7dbe4;width:34px;height:34px;border-radius:10px;cursor:pointer;font-size:18px}.modal-box p{font-size:12px;color:#9ca5b4}.modal-box .cta{width:100%;min-width:0;margin-top:8px}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.reveal.show{opacity:1;transform:none}
+    @media (max-width:760px){.wrap{padding:0 16px}.hero{padding:44px 0 42px}.stats{grid-template-columns:repeat(2,1fr);gap:16px 20px;max-width:380px}.cta{min-width:min(92vw,390px)}.cards{grid-template-columns:1fr 1fr}.result-grid{grid-template-columns:1fr}.float{display:block}.bottom{padding-bottom:100px}.ticker{position:relative}.ticker-track{animation-duration:20s}}
+    @media (max-width:460px){h1{font-size:39px}.lead{font-size:12px}.cards{grid-template-columns:1fr}.card{min-height:110px}.stats{font-size:12px}.stat strong{font-size:21px}}
+    @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="ticker"><div class="ticker-label">MARKET</div><div class="ticker-track" id="tickerTrack" aria-label="市場表示例"></div></div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">注目銘柄・情報を無料で共有中</div>
+      <h1><span class="gold">投資情報</span>を<br><span class="green">無料</span>でチェック！</h1>
+      <p class="lead">相場ニュース、チャートの見方、テーマ別の注目ポイントなどを<br>公式LINEでわかりやすく配信しています</p>
+      <div class="update">最終更新：<strong id="clock">--</strong></div>
+
+      <div class="stats">
+        <div class="stat"><strong data-target="12400" data-suffix="+">0</strong><small>掲載登録者数</small></div>
+        <div class="stat"><strong data-target="847" data-prefix="+" data-suffix="%">0</strong><small>掲載上昇率</small></div>
+        <div class="stat"><strong data-target="92.4" data-suffix="%" data-decimals="1">0</strong><small>掲載情報の参考値</small></div>
+        <div class="stat"><strong>毎日</strong><small>情報更新</small></div>
+      </div>
+
+      <a class="cta line-link" href="https://lin.ee/VnzBo3B" target="_blank" rel="noopener noreferrer"><span class="bubble">▣</span> 公式LINEに無料追加する <span>›</span></a>
+      <div class="fine">※情報は投資判断の参考情報です。投資には損失が生じる可能性があります。</div>
+    </div>
+  </header>
+
+  <section class="section reveal">
+    <div class="wrap">
+      <h2><span class="g">公式LINE</span>でチェックできる情報</h2>
+      <div class="cards" id="benefitCards">
+        <article class="card" data-title="毎日の市場レポート" data-detail="相場全体の動きやニュース、注目テーマをまとめて確認できる形で共有します。"><div class="ico">▣</div><h3><span class="gold">毎日の市場レポート</span></h3><p>相場全体の動きやニュース、注目テーマをわかりやすく整理。</p><span class="more">タップして詳細を見る →</span></article>
+        <article class="card" data-title="高配当・割安銘柄の見方" data-detail="配当利回りやバリュエーションなど、銘柄を見るときの基本的なポイントを整理します。"><div class="ico">◈</div><h3><span class="gold">高配当・割安銘柄の見方</span></h3><p>配当やバリュエーションを見るときの基本を整理。</p><span class="more">タップして詳細を見る →</span></article>
+        <article class="card" data-title="急騰・材料ニュース" data-detail="値動きの背景にあるニュースや材料を確認し、なぜ動いたのかを考える材料として共有します。"><div class="ico">◆</div><h3><span class="pink">急騰・材料ニュース</span></h3><p>値動きの背景にあるニュースや材料をチェック。</p><span class="more">タップして詳細を見る →</span></article>
+        <article class="card" data-title="チャート分析・テクニカル" data-detail="移動平均線、RSI、トレンドラインなど、チャートを読むための基礎的なポイントを解説します。"><div class="ico">◌</div><h3><span class="green">チャート分析・テクニカル</span></h3><p>移動平均線やRSIなど、チャートの基本を解説。</p><span class="more">タップして詳細を見る →</span></article>
+        <article class="card" data-title="AIスクリーニングの考え方" data-detail="複数の条件で銘柄を絞り込むときの考え方や、データを見る際の注意点を整理します。"><div class="ico">◇</div><h3><span class="blue">AIスクリーニング</span></h3><p>データを使って銘柄を絞るときの考え方を紹介。</p><span class="more">タップして詳細を見る →</span></article>
+        <article class="card" data-title="限定コンテンツ" data-detail="テーマ別レポートや相場解説など、その時々の内容を登録者向けに整理して配信します。"><div class="ico">◍</div><h3><span class="gold">限定コンテンツ</span></h3><p>テーマ別レポートや相場解説を登録者向けに共有。</p><span class="more">タップして詳細を見る →</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="results reveal">
+    <div class="wrap">
+      <div class="result-title"><div class="sub">参考プロフィール</div><h2>投資・経済分野の<span style="color:#ff4c9d">人物例</span></h2></div>
+      <div class="notice">以下は参考人物として掲載しているもので、本人の利用・推薦・監修を示すものではありません。本人の「利用者の声」や実績談としては使用していません。</div>
+      <div class="result-grid">
+        <article class="review"><div class="person"><div class="avatar"><svg class="profile-svg" viewBox="0 0 80 80" aria-hidden="true"><rect width="80" height="80" fill="#162234"/><circle cx="40" cy="32" r="15" fill="#c99073"/><path d="M20 76c3-18 14-25 20-25s17 7 20 25" fill="#202a39"/><path d="M24 31c2-13 12-21 24-18 9 2 13 8 13 17-7-7-22-10-37 1z" fill="#1b1a18"/></svg></div><div><b>参考人物A</b><span>経済・投資分野</span></div></div><span class="tag">広告への推薦ではありません</span><p>人物情報を参考にする場合も、投資判断は必ず一次情報と自身の調査で行ってください。</p></article>
+        <article class="review"><div class="person"><div class="avatar"><svg class="profile-svg" viewBox="0 0 80 80" aria-hidden="true"><rect width="80" height="80" fill="#21182c"/><circle cx="40" cy="31" r="14" fill="#d6a083"/><path d="M18 76c4-18 15-24 22-24s18 6 22 24" fill="#3a3150"/><path d="M25 29c1-13 10-21 24-19 8 1 14 8 13 19-7-4-25-8-37 0z" fill="#191716"/></svg></div><div><b>参考人物B</b><span>経済・投資分野</span></div></div><span class="tag">広告への推薦ではありません</span><p>相場の見方は一つではないため、複数の情報を比較して確認することが重要です。</p></article>
+        <article class="review"><div class="person"><div class="avatar"><svg class="profile-svg" viewBox="0 0 80 80" aria-hidden="true"><rect width="80" height="80" fill="#132a29"/><circle cx="40" cy="32" r="15" fill="#bb805f"/><path d="M20 76c3-18 14-25 20-25s17 7 20 25" fill="#273a40"/><path d="M22 33c2-14 12-22 25-20 10 1 15 9 14 22-6-7-24-12-39-2z" fill="#1a1a1a"/></svg></div><div><b>参考人物C</b><span>個人投資・市場分野</span></div></div><span class="tag">広告への推薦ではありません</span><p>他人の意見をそのまま売買判断にせず、自分で内容を確認することをおすすめします。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom reveal">
+    <div class="wrap">
+      <div class="warning">⚠ 投資にはリスクがあります ⚠</div>
+      <h2>まずは情報をチェックして<br><span class="gold">自分で判断できる材料</span>を</h2>
+      <p>公式LINEでは相場ニュースや分析内容などを配信しています。<br>内容を確認したうえで、ご自身の判断と責任でご利用ください。</p>
+      <a class="cta line-link" href="https://lin.ee/VnzBo3B" target="_blank" rel="noopener noreferrer"><span class="bubble">▣</span> 公式LINEに無料追加する <span>›</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-title">投資情報 公式LINE</div>
+      <div>本ページは情報提供を目的としたコンテンツです。掲載数値は参考表示を含み、将来の利益を保証するものではありません。最終的な投資判断はご自身の責任で行ってください。</div>
+      <div style="margin-top:7px">© 2026 投資情報 公式LINE</div>
+    </div>
+  </footer>
+
+  <div class="float"><a class="cta line-link" href="https://lin.ee/VnzBo3B" target="_blank" rel="noopener noreferrer"><span class="bubble">▣</span> 公式LINEに無料追加する <span>›</span></a></div>
+
+  <div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box"><div class="modal-head"><h3 id="modalTitle">詳細</h3><button class="close" id="closeModal" aria-label="閉じる">×</button></div><p id="modalText"></p><a class="cta line-link" href="https://lin.ee/VnzBo3B" target="_blank" rel="noopener noreferrer"><span class="bubble">▣</span> 公式LINEを確認する <span>›</span></a></div>
+  </div>
+
+  <script>
+    // Dynamic ticker (clearly labeled as display examples, not a live market feed)
+    const tickerItems=[
+      ['9984 ソフトバンクG','+1.23%','up'],['4063 信越化学工業','+4.77%','up'],['8306 三菱UFJ','+2.45%','up'],['9432 NTT','-0.88%','down'],['6961 エンプラス','+4.31%','up'],['2413 エムスリー','+2.92%','up'],['7203 トヨタ','+1.08%','up'],['6857 アドバンテスト','-1.12%','down']
+    ];
+    const tickerTrack=document.getElementById('tickerTrack');
+    tickerTrack.innerHTML=[...tickerItems,...tickerItems].map(([n,v,c])=>`<span class="${c}">${v.startsWith('+')?'▲':'▼'} ${n} ${v}</span>`).join('');
+
+    // Clock
+    const clock=document.getElementById('clock');
+    function updateClock(){const d=new Date();clock.textContent=d.toLocaleString('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});}
+    updateClock();setInterval(updateClock,1000);
+
+    // Count up on view
+    function animateValue(el){if(el.dataset.done)return;el.dataset.done='1';const target=parseFloat(el.dataset.target);const decimals=parseInt(el.dataset.decimals||'0',10);const prefix=el.dataset.prefix||'';const suffix=el.dataset.suffix||'';const start=performance.now();const duration=1200;function frame(now){const p=Math.min(1,(now-start)/duration);const eased=1-Math.pow(1-p,3);const val=(target*eased).toFixed(decimals);el.textContent=prefix+Number(val).toLocaleString('ja-JP',{minimumFractionDigits:decimals,maximumFractionDigits:decimals})+suffix;if(p<1)requestAnimationFrame(frame);}requestAnimationFrame(frame);}
+    const statObserver=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.stat strong[data-target]').forEach(animateValue);statObserver.disconnect();}}),{threshold:.35});statObserver.observe(document.querySelector('.stats'));
+
+    // Scroll reveal
+    const revealObserver=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');revealObserver.unobserve(e.target);}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+    // Interactive benefit modal
+    const modal=document.getElementById('detailModal'), modalTitle=document.getElementById('modalTitle'), modalText=document.getElementById('modalText');
+    document.querySelectorAll('.card[data-title]').forEach(card=>card.addEventListener('click',()=>{modalTitle.textContent=card.dataset.title;modalText.textContent=card.dataset.detail;modal.classList.add('open');}));
+    function closeModal(){modal.classList.remove('open')};document.getElementById('closeModal').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+    // Ripple on CTA buttons
+    document.querySelectorAll('.cta').forEach(btn=>btn.addEventListener('click',()=>{btn.animate([{transform:'scale(1)'},{transform:'scale(.985)'},{transform:'scale(1)'}],{duration:180});}));
+  </script>
+</body>
+</html>
